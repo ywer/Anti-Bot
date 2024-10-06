@@ -19,7 +19,7 @@ namespace Anti_Bot
             settings.LoadProgrammSettingsFromFile();
             var Settings = settings.ReturnAllProgrammSettings();
             if(!Settings.DidSetup)
-            {
+            { 
                 DoSetup();
                 Program program = new Program();
                 program.Shutdown(true);

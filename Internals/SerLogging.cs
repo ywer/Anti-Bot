@@ -201,6 +201,10 @@ namespace Anti_Bot.Internals
         {
             ProgrammSettings settings = new ProgrammSettings();
             string level = settings.ReturnConsoleLogLevel();
+            if (string.IsNullOrEmpty(level))
+            {
+                level = LogEventLevel.Warning.ToString();
+            }
             LogEventLevel LogLevel = ParseLogLevel(level);
             ConsoleLogLevel = LogLevel;
             return LogLevel;
@@ -210,6 +214,10 @@ namespace Anti_Bot.Internals
         {
             ProgrammSettings settings = new ProgrammSettings();
             string level = settings.ReturnFileLogLevel();
+            if(string.IsNullOrEmpty(level))
+            {
+                level = LogEventLevel.Warning.ToString();
+            }
             LogEventLevel LogLevel = ParseLogLevel(level);
             FileLogLevel = LogLevel;
             return LogLevel;

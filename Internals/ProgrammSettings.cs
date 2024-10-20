@@ -19,6 +19,7 @@ namespace Anti_Bot.Internals
             public string LogLevelFile { get;set; }
             public string LoglevelConsole { get; set; }
             public bool DidSetup { get; set; }
+            public string DiscordAPIKey { get; set; }
         }
         private ProgrammData PSettings = new ProgrammData();
         SerLogging Log = new SerLogging();
@@ -178,6 +179,24 @@ namespace Anti_Bot.Internals
             return LogLevel;
         }
 
+        //todo: Weg um api key später zu ändern bei zb fehleingabe
+        public void ChangeDiscordAPIKey(string key)
+        {
+            if(!string.IsNullOrEmpty(key))
+            {
+                return;
+            }
+            PSettings.DiscordAPIKey = key;
+                return;
+
+        }
+
+        public string ReturnDiscordAPIKey()
+        {
+            NullCheck();
+            string Key = PSettings.DiscordAPIKey;
+            return Key;
+        }
 
         #endregion
     }

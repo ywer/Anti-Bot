@@ -9,6 +9,7 @@ namespace Anti_Bot
         #region Data
         SerLogging Log = new SerLogging();
         public static double Version = 0.00001;
+        public int MaxTrys = 3;//max try for try catch 
         #endregion
         static void Main(string[] args)
         {
